@@ -11,7 +11,7 @@ jobs:
   build:
     strategy:
       matrix:
-        cargo_target:
+        target:
           - x86_64-apple-darwin
           
 
