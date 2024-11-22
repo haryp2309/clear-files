@@ -9,11 +9,16 @@ env:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        cargo_target:
+          - x86_64-apple-darwin
+          
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: cargo build --verbose --release
+      run: cargo build --verbose --release --target ${{ matrix.target }}
       
